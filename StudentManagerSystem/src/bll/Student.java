@@ -5,7 +5,6 @@ public class Student {
     private String num;
     private String name;
     private float score;
-
     public Student() {
     }
     public Student(String id, String num, String name, float score) {
