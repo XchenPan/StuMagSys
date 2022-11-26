@@ -5,6 +5,16 @@ public class Student {
     private String num;
     private String name;
     private float score;
+    public static int count = 0;
+
+    public static void setCount() {
+        Student.count++;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
     public Student() {
     }
     public Student(String id, String num, String name, float score) {
