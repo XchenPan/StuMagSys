@@ -24,6 +24,8 @@ public class Test {
             System.out.println("\t ---------------------------------------------------------------");
             System.out.println("\t                         4.删除学生信息                          ");
             System.out.println("\t ---------------------------------------------------------------");
+            System.out.println("\t                         5.打印学生信息                          ");
+            System.out.println("\t ---------------------------------------------------------------");
             System.out.println("\t                         q.退出管理系统                          ");
             System.out.println("\t******************************************************************");
             Scanner input = new Scanner(System.in);
@@ -73,10 +75,9 @@ public class Test {
                         default -> System.out.println("输入错误，请重新输入：");
                     }
                 }
+                case "5" -> OpStu.PrintStu(stu);
                 case "q" -> {
                     System.out.println("退出成功！");
-                    System.out.println("学生个数：" + Student.count);
-                    OpStu.PrintStu(stu);
                     System.exit(0);
                 }
                 default -> System.out.println("输入错误，请重新输入：");

@@ -70,18 +70,29 @@ public class OpStu {
         }
     }
     public static void  PrintStu(Student[] stu) {
-        for (int i = 0; stu[i] != null; i++)
-            System.out.println("身份证号：" + stu[i].getId() + " " + "姓名：" + stu[i].getName() + " " + "学号：" + stu[i].getNum() + " " + "成绩：" + stu[i].getScore());
+        if (Student.count == 0)
+            System.out.println("当前学生个数为0,不能打印！");
+        else {
+            System.out.println("当前学生个数：" + Student.count);
+            for (int i = 0; i < Student.count; i++)
+                System.out.println("身份证号：" + stu[i].getId() + " " + "姓名：" + stu[i].getName() + " " + "学号：" + stu[i].getNum() + " " + "成绩：" + stu[i].getScore());
+        }
     }
     public static void  DelStu(Student[] stu, String value) {
+        boolean sign = false;
         for (int i = 0; i < Student.count; i++) {
             if (stu[i].getId().compareTo(value) == 0) {
+                sign = true;
                 stu[i] = null;
                 Student.count--;
                 for (int j = i; j < Student.count; j++)
                     stu[j] = stu[j + 1];
             }
         }
+        if (!sign)
+            System.out.println("为找到该学生，请重新选择!");
+        else
+            System.out.println("删除成功！");
     }
     public static void DelStu_id(Student[] stu, String id) {
         DelStu(stu, id);
